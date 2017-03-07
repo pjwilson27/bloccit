@@ -1,0 +1,20 @@
+<h1>New Ad Forms</h1>
+<div class="row">
+    <%= form_for @advertisement do |y| %>
+    <div class="form-group">>
+        <%= y.label :title %>
+        <%= y.text_field :title, class: 'form-control', placeholder: "Title your post..." %>
+    </div>
+    <div class="form-group">
+        <%= y.label :body %>
+        <%= y.text_field :body, class: 'form-control', placeholder: "Content goes here..." %>
+    </div>
+    <div class="form-group">
+        <%= y.label :price %>
+        <%= y.number_field :price, class: 'form-control', placeholder: 0 %>
+    </div>
+    <div class="form-group">
+        <%= y.submit "Save", class: 'btn btn-success' %>
+    </div>
+    <% end %>
+</div>
