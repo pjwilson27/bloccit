@@ -35,8 +35,6 @@ RSpec.describe PostsController, type: :controller do
        expect(assigns(:post)).to eq(my_post)
      end
    end
-    
-  end
 
   describe "GET new" do
     it "returns http success" do
@@ -132,3 +130,4 @@ RSpec.describe PostsController, type: :controller do
        expect(response).to redirect_to posts_path
      end
    end
+ end
