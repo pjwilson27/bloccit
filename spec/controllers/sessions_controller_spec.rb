@@ -12,8 +12,8 @@ RSpec.describe SessionsController, type: :controller do
     
     describe "POST sessions" do
         it "returns http success" do
-            post :create, session: {email: my_user.password}
-            expect(session[:user_id]).to eq my_user.id
+            post :create, session: {email: my_user.email}
+            expect(response).to have_http_status(:success)
         end
         
         it "does not add a user id to session due to missing password" do
@@ -32,7 +32,7 @@ RSpec.describe SessionsController, type: :controller do
         end
         
         it "redirects to the root view" do
-            post :create, session: {email: my_user.emai, password: my_user.password}
+            post :create, session: {email: my_user.email, password: my_user.password}
             expect(response).to redirect_to(root_path)
         end
     end
