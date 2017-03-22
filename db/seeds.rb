@@ -21,14 +21,19 @@ topics = Topic.all
 #Create Posts
 50.times do
     #1
-    Post.create!(
+    post = Post.create!(
         user: users.sample,
         topic: topics.sample,
         title: RandomData.random_sentence,
-        body: RandomData.random_paragraph
-        )
+        body: RandomData.random_paragraph,
+        created_at: rand(10.minutes .. 1.year).ago
+    )
+
 end
 posts = Post.all
+
+
+#rand(1..5).times { post.votes.create!(value: [-1, 1].sample, user: users.sample) }
 
 #create comments
 100.times do
@@ -59,4 +64,5 @@ puts "#{User.count} users created"
 puts "#{Topic.count} topics created"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
+puts "#{Vote.count} votes created"
     
