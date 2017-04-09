@@ -57,6 +57,7 @@ class TopicsController < ApplicationController
         end
     end
     
+    
     private
     
     def topic_params
@@ -70,4 +71,10 @@ class TopicsController < ApplicationController
         end
     end
     
+    def mod_user
+        unless current_user.moderator?
+        flash[:alert] = "You aren't able to do that action."
+        redirect_to topics_path
+        end
+    end
 end

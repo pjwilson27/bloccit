@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   
   before_action :require_sign_in, except: :show
   before_action :authorize_user, except: [:show, :new, :create]
+  before_action :mod_user, except: [:show, :new, :create]
 
   def create
     @topic = Topic.find(params[:topic_id])
