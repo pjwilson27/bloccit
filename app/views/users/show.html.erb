@@ -21,11 +21,17 @@
 
 <h2>Posts</h2>
 <%= render @user.posts %>
-<!-- invoke helper to see if it should be called or not -->
+<% user_posted %>
+
 <h2>Comments</h2>
 <%= render @user.comments %>
+<% user_commented %>
 
 <h2>Favorites</h2>
-<!-- if statement first
+<% if user_posted %>
+    <%= render @user.favorites %>
+<% else %>
+    <p>There are no favorites.</p>
+<% end %>
 
 
