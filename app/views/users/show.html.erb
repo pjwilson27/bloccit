@@ -20,18 +20,21 @@
 </div>
 
 <h2>Posts</h2>
-<%= render @user.posts %>
-<% user_posted %>
+<% if user_posted? %>
+    <%= render @user.posts %>
+<% else %>
+    <%= "#{user.name} doesn't have any posts." %>
+<% end %>
+
 
 <h2>Comments</h2>
-<%= render @user.comments %>
-<% user_commented %>
-
-<h2>Favorites</h2>
-<% if user_posted %>
-    <%= render @user.favorites %>
+<% if user_commented? %>
+    <%= render @user.comments %>
 <% else %>
-    <p>There are no favorites.</p>
+    <%= "#{user.name} hasn't made any comments!" %>
 <% end %>
+<!-- issue hereish -->
+<h2>Favorites</h2>
+    <%= render @user.favorites %>
 
 

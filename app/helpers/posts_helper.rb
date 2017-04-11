@@ -3,11 +3,7 @@ module PostsHelper
         current_user && (current_user == post.user || current_user.admin?)
     end
     
-    def user_posted
-        if current_user.posts.count > 0
-            #display user posts
-        else
-            puts "{user.name} has not submitted any posts yet."
-        end
+    def user_posted?
+        current_user.posts.count > 0
     end
 end
