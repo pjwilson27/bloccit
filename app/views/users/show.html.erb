@@ -23,7 +23,7 @@
 <% if user_posted? %>
     <%= render @user.posts %>
 <% else %>
-    <%= "#{user.name} doesn't have any posts." %>
+    <%= "doesn't have any posts." %>
 <% end %>
 
 
@@ -31,9 +31,9 @@
 <% if user_commented? %>
     <%= render @user.comments %>
 <% else %>
-    <%= "#{user.name} hasn't made any comments!" %>
+    <%= "hasn't made any comments!" %>
 <% end %>
-<!-- issue hereish -->
+
 <h2>Favorites</h2>
     <%= render @user.favorites %>
 
