@@ -21,7 +21,7 @@
 
 <h2>Posts</h2>
 <% if user_posted? %>
-    <%= render @user.posts %>
+    <%= avatar_url = @user.avatar_url(128) %><%= render @user.posts %>
 <% else %>
     <%= "doesn't have any posts." %>
 <% end %>
